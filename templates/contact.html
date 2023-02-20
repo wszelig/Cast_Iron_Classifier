@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} - Contact{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+{% block content %}
+  <h2>Contact</h2>
+  <ul id="contact-info">
+    <li>Email: <a href="mailto:wojciech.szeliga5@gmail.com">wojciech.szeliga5@gmail.com</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/wojciechszeliga/">linkedin.com/in/wojciechszeliga</a></li>
+  </ul>
+  <p>Please do not hesitate to contact me through any of the aforementioned channels.</p>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} - Classify Microstructure{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/classify.css') }}">
+{% endblock %}
+{% block content %}
+  <h2>Classify the type of cast iron</h2>
+  <form method="POST" enctype="multipart/form-data">
+    <label for="image-file">To classify the cast iron microstructure image file, please select the 'Choose File' button or drag and drop the file onto the designated area.</label>
+    <div class="items-horizontal-center">
+      <input type="file" id="image-file" name="microstructure">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+  {% if status_message %}
+    <p>{{ status_message|safe }}</p>
+    {% if uploaded_image_id %}
+      {% if cast_iron_type == "White" %}
+        <h3>White Cast Iron</h3>
+        <p>White cast iron is characterized by its white, brittle fracture surface due to the presence of cementite. It is hard and wear-resistant, making it suitable for applications such as grinding balls and liners.</p>
+      {% elif cast_iron_type == "Ductile" %}
+        <h3>Ductile Cast Iron</h3>
+        <p>Ductile cast iron, also known as nodular or spheroidal graphite cast iron, is characterized by its nodular graphite inclusions, which give it improved ductility and toughness compared to other cast iron types. It is commonly used in automotive and heavy machinery applications due to its strength and durability.</p>
+      {% elif cast_iron_type == "Malleable" %}
+        <h3>Malleable Cast Iron</h3>
+        <p>Malleable cast iron is characterized by its nodular graphite inclusions and its ability to be bent or stretched without breaking. It has good ductility and toughness, making it suitable for applications such as pipe fittings and valve bodies.</p>
+      {% else %}
+        <h3>Grey Cast Iron</h3>
+        <p>Grey cast iron is characterized by its grey, flaky fracture surface due to the presence of graphite flakes. It is easily machinable and has good damping capacity, making it suitable for applications such as engine blocks and housings.</p>
+      {% endif %}
+      <div class="items-horizontal-center">
+        <button><a href="/search/{{uploaded_image_id}}">View Uploaded Image in the Database</a> </button>
+      </div>
+    {% endif %}
+  {% endif %}
+{% endblock %}

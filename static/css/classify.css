@@ -1,0 +1,20 @@
+.items-horizontal-center {
+	margin: 20px 15%;
+}
+
+input {
+	padding: 10px 20px;
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 25px;
+	text-align: center;
+	margin: 20px 0;
+}
+
+p {
+	font-size: 20px;
+	text-align: center;
+}
+

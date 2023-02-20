@@ -1,0 +1,43 @@
+select {
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px 5px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+}
+
+input {
+  font-size: 15px;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th:not(:last-child), td:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+}
+
+tr {
+  border-top: 1px solid #ddd;
+}
+
+td {
+  background-color: #aaa;
+}

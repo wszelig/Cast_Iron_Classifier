@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} - Home{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+{% block content %}
+	<section>
+		<h2>About the project</h2>
+		<p>The Cast Iron Classifier is a project developed by Wojciech Szeliga, a senior student majoring in Computer Science in Engineering, as part of his Bachelor of Science Thesis, named 'Recognition and search in the database of microstructures with parameters selected by the user', at the AGH University of Science and Technology in Kraków.</p>
+		<p>The project employs Convolutional Neural Networks (CNN) to identify the type of cast iron for every uploaded cast iron microstructure image and creates a database of these images. Furthermore, it allows users to search for specific microstructures based on several parameters, including the type of cast iron, date of upload, and image dimensions.</p>
+	</section>
+
+	<section>
+		<h2>Main goal</h2>
+		<p>The primary objective of the project is to assess the potential of utilizing neural networks, particularly CNN, for accurately classifying the microstructures of various alloys, with a specific focus on cast iron. The project seeks to contribute to the field of material science by leveraging the capabilities of neural networks to identify different types of alloys based on their microstructure, while also promoting interdisciplinarity between computer and material sciences, especially in the area of AI-based image recognition.</p>
+		<p>In addition to its technical objectives, the project also aims to provide an accessible resource for students interested in learning about cast iron types and their microstructures. To this end, the project includes a database of cast iron microstructure images, which can be easily accessed online. By enlarging this database, the project seeks to address the current shortage of readily available cast iron microstructure images, while also making it easier for younger students to learn about material sciences through the use of advanced computational tools.</p>
+	</section>
+
+	<section id="feature-section">
+		<h2>Experience the Potential of Neural Networks in Material Science</h2>
+		<div class="items-horizontal-center">
+			<button><a href="/classify">Use the Cast Iron Classifier</a></button>
+			<button><a href="/search">Explore the Cast Iron Microstructures</a></button>
+		</div>
+	</section>
+{% endblock %}

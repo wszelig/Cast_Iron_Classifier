@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %} - Home{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+{% endblock %}
+{% block content %}
+  <h2>Images</h2>
+  <div class="items-horizontal-center">
+    <div class="items-horizontal-center">
+      <label for="type-filter">Cast Iron Type:</label>
+      <select id="type-filter">
+      <option value="">All</option>
+      <option value="Malleable">Malleable</option>
+      <option value="Ductile">Ductile</option>
+      <option value="White">White</option>
+      <option value="Grey">Grey</option>
+      </select>
+    </div>
+    <div class="items-horizontal-center">
+      <label for="name-filter">Name:</label>
+      <input type="text" id="name-filter" placeholder="Name and/or extension">
+    </div>
+    <div class="items-horizontal-center">
+      <label for="dimensions-filter">Dimensions:</label>
+      <input type="text" id="dimensions-filter" placeholder="E.g. 300x200">
+    </div>
+    <div class="items-horizontal-center">
+      <label for="date-filter">Date:</label>
+      <input type="date" id="date-filter">
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Cast Iron Type</th>
+        <th>Name</th>
+        <th>Dimensions</th>
+        <th>Date of Upload</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for microstructure in microstructures %}
+        <tr>
+          <td><img src="{{ microstructure.url }}" alt="Cast Iron Microstructure" width="300" height="200"></td>
+          <td><strong>{{ microstructure.cast_iron_type }}</strong></td>
+          <td>{{ microstructure.name }}</td>
+          <td>{{ microstructure.dimensions }}</td>
+          <td>{{ microstructure.date_uploaded }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+{% block body %}
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}

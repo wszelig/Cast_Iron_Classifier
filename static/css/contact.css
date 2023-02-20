@@ -1,0 +1,20 @@
+li {
+	margin-bottom: 10px;
+	font-size: 22px;
+}
+
+#contact-info a {
+	color: #0077c0;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+#contact-info a:hover {
+	color: #062d87;
+}
+
+p {
+	font-size: 25px;
+	text-align: center;
+	margin-top: 5%;
+}
